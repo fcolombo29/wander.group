@@ -1,0 +1,8 @@
+{
+  "name": "WanderGroup - Gestiona Viajes con Amigos 2",
+  "description": "Una aplicación completa para organizar viajes en grupo: gestión de gastos compartidos, itinerarios, documentos y mapas con soporte offline.",
+  "requestFramePermissions": [
+    "geolocation",
+    "microphone"
+  ]
+}

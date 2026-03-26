@@ -1,0 +1,53 @@
+{
+  "name": "wandergroup---gestiona-viajes-con-amigos-2",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:client": "vite",
+    "dev:server": "tsx watch server/index.ts",
+    "build": "vite build",
+    "start": "NODE_ENV=production tsx server/index.ts",
+    "preview": "vite preview",
+    "db:push": "drizzle-kit push"
+  },
+  "dependencies": {
+    "@google/genai": "^1.37.0",
+    "@neondatabase/serverless": "^1.0.2",
+    "@types/bcrypt": "^6.0.0",
+    "@types/connect-pg-simple": "^7.0.3",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/express-session": "^1.18.2",
+    "@types/memoizee": "^0.4.12",
+    "@types/passport": "^1.0.17",
+    "bcrypt": "^6.0.0",
+    "concurrently": "^9.2.1",
+    "connect-pg-simple": "^10.0.0",
+    "cors": "^2.8.6",
+    "drizzle-kit": "^0.31.9",
+    "drizzle-orm": "^0.45.1",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "lucide-react": "^0.562.0",
+    "memoizee": "^0.4.17",
+    "memorystore": "^1.6.7",
+    "openid-client": "^6.8.2",
+    "passport": "^0.7.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "recharts": "^3.6.0",
+    "tsx": "^4.21.0",
+    "ws": "^8.19.0"
+  },
+  "imports": {
+    "#shared/*": "./shared/*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}

@@ -1,0 +1,18 @@
+
+{
+  "name": "WanderGroup",
+  "short_name": "Wander",
+  "description": "Gestiona viajes con amigos de forma offline y colaborativa.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4f46e5",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/826/826070.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

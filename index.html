@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#4f46e5">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="Organiza viajes en grupo, gestiona gastos compartidos y crea itinerarios con inteligencia artificial.">
+  
+  <!-- OpenGraph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="WanderGroup - Viajes Inteligentes">
+  <meta property="og:description" content="La herramienta definitiva para viajeros que aman compartir aventuras.">
+  <meta property="og:image" content="https://cdn-icons-png.flaticon.com/512/826/826070.png">
+  
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/826/826070.png">
+  
+  <title>WanderGroup</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { 
+      font-family: 'Inter', sans-serif; 
+      -webkit-tap-highlight-color: transparent;
+      background-color: #f8fafc;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      position: fixed;
+    }
+    #root { 
+      height: 100%; 
+      overflow-y: auto; 
+      -webkit-overflow-scrolling: touch; 
+    }
+    /* Estilos para evitar el scroll elástico molesto en iOS */
+    .no-scroll { overflow: hidden; }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        // Registro directo con ruta relativa. 
+        // El navegador lo resolverá correctamente contra el origen del documento.
+        // Se usa un bloque catch suave ya que en entornos de previsualización (sandboxes)
+        // los Service Workers suelen estar bloqueados por políticas de seguridad del navegador.
+        navigator.serviceWorker.register('sw.js')
+          .then(reg => console.log('WanderGroup SW listo:', reg.scope))
+          .catch(err => {
+            console.warn('Service Worker no disponible en este entorno de previsualización:', err.message);
+          });
+      });
+    }
+  </script>
+</body>
+</html>
