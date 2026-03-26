@@ -8,7 +8,7 @@
     "dev:client": "vite",
     "dev:server": "tsx watch server/index.ts",
     "build": "vite build",
-    "start": "NODE_ENV=production tsx server/index.ts",
+    "start": "node server/index.ts",
     "preview": "vite preview",
     "db:push": "drizzle-kit push"
   },
