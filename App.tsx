@@ -18,25 +18,20 @@ export type ViewType = 'home' | 'trip-dashboard' | 'expenses' | 'activities' | '
 const App: React.FC = () => {
   const [history, setHistory] = useState<ViewType[]>(['home']);
   const [selectedTripId, setSelectedTripId] = useState<string | null>(null);
-  const [user, setUser] = useState<UserType | null>(null);
+  const [user, setUser] = useState<UserType | null>({
+  id: "demo",
+  name: "Usuario Demo",
+  email: "demo@demo.com",
+  avatar_url: ""
+});
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [loading, setLoading] = useState(true);
 
   const currentView = history[history.length - 1];
 
   useEffect(() => {
-    async function checkAuth() {
-      try {
-        const currentUser = await api.getCurrentUser();
-        if (currentUser) {
-          setUser(currentUser);
-        }
-      } catch {
-      } finally {
-        setLoading(false);
-      }
-    }
-    checkAuth();
+  setLoading(false);
+}, []);
 
     const handleOnline = () => setIsOnline(true);
     const handleOffline = () => setIsOnline(false);
