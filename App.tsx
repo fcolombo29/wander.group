@@ -18,11 +18,9 @@ export type ViewType = 'home' | 'trip-dashboard' | 'expenses' | 'activities' | '
 const App: React.FC = () => {
   const [history, setHistory] = useState<ViewType[]>(['home']);
   const [selectedTripId, setSelectedTripId] = useState<string | null>(null);
-  const [user, setUser] = useState<UserType | null>({
+ const [user, setUser] = useState<any>({
   id: "demo",
-  name: "Usuario Demo",
-  email: "demo@demo.com",
-  avatar_url: ""
+  name: "Usuario Demo"
 });
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [loading, setLoading] = useState(true);
