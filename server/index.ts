@@ -15,6 +15,14 @@ app.use(express.urlencoded({ extended: true }));
 async function start() {
  // await setupAuth(app);
 // registerAuthRoutes(app);
+ app.use((req: any, _res, next) => {
+  req.user = {
+    id: "demo-user",
+    email: "demo@demo.com",
+    name: "Demo User"
+  };
+  next();
+});
   registerApiRoutes(app);
 
   if (isProd) {
