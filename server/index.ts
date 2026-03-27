@@ -13,8 +13,8 @@ app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
 
 async function start() {
-  await setupAuth(app);
-  registerAuthRoutes(app);
+ // await setupAuth(app);
+// registerAuthRoutes(app);
   registerApiRoutes(app);
 
   if (isProd) {
